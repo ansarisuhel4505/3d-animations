@@ -14,7 +14,6 @@ body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 @keyframes color{
-    }
     10%{
         background-color: antiquewhite;
     }
@@ -230,6 +229,7 @@ body:hover{
 .ticker-text:hover{
   animation-play-state: paused;
 }
+
 
 
 
