@@ -1,235 +1,210 @@
-body{
-    margin: 0;
-    animation-name: color;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    height: 100vh;
-    font-size:16px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    font-weight: bolder;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
 }
-@keyframes color{
-    10%{
-        background-color: antiquewhite;
-    }
-    20%{
-        background-color:burlywood;
-    }
-    30%{
-        background-color: orchid;
-    }
-    40%{
-        background-color: green;
-    }
-    50%{
-        background-color: beige;
-    }
-    60%{
-        background-color: yellow;
-    }
-    70%{
-        background-color: red;
-    }
-    80%{
-        background-color: purple;
-    }
-    90%{
-        background-color: wheat;
-    }
-    100%{
-    background-color: black;
-    }
-}
-body:hover{
-    background-color: aqua;
-}
-@media(max-width:600px){
-    body{
-        font-size:14px;}
-}
-.suhel{
-    width: 200px;
-    height: 200px;
-    
-    border-width: 10px;
-    border-style: dashed;
-    border-color: #000000;
-    border-radius: 50%;
-    background-color: pink;
-    position: fixed;
-    animation-name: spin;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 40vh;
-    right: 30vw;
-    animation-direction: alternate-reverse;
-}
-@keyframes spin{
-    
-   0%{
-    left: 0px;
-   }
-    10%{
-        background-color: antiquewhite;
-    }
-    20%{
-        background-color:burlywood;
-    }
-    30%{
-        background-color: orchid;
-    }
-    40%{
-        background-color: green;
-    }
-    50%{
-        background-color: beige;
-    }
-    60%{
-        background-color: yellow;
-    }
-    70%{
-        background-color: red;
-    }
-    80%{
-        background-color: purple;
-    }
-    90%{
-        background-color: wheat;
-    }
-    100%{
-        left: 900px;
-        transform: rotate(360deg);
-    }
-    
-}
-.suhel:hover{
-    background-color: cyan;
-    color: black;
-    font-size: 40px;
-    transition: 2s;
 
+/* Navbar */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#111;
+  color:white;
+  padding:10px 20px;
 }
-.suhel:active{
-    background-color: aqua;
-    color: red;
-    font-size: 50px;
-    transition: 2s;
+
+.logo{font-size:20px;}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:20px;
 }
+
+.nav-links a, .nav-links button{
+  color:white;
+  background:none;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+  font-size:16px;
+}
+
+.menu-icon{display:none; font-size:26px;}
+#menu-toggle{display:none;}
+
+/* Mobile Navbar */
+@media(max-width:768px){
+  .menu-icon{display:block;}
+  .nav-links{
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+    background:#222;
+    flex-direction:column;
+    display:none;
+  }
+  #menu-toggle:checked ~ .nav-links{display:flex;}
+}
+
+/* Hero */
+.hero{
+  height:30vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(to right,purple,pink);
+  color:white;
+}
+
+/* 3D Animation */
+.suhel{
+  width:200px;
+  height:200px;
+  border:10px dashed black;
+  border-radius:50%;
+  background:linear-gradient(145deg,pink,hotpink);
+  margin:20px auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  perspective:1000px;
+  transform-style:preserve-3d;
+
+  animation: spin3d 4s linear infinite;
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Inner circle */
 .khan{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border-width: 10px;
-    border-style: dashed;
-    border-color: #000000;
-    background-color: pink;
-    position: fixed;
-    animation-name: round;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    display: flex;
-    justify-content: center;
-    align-self: center;
+  width:100px;
+  height:100px;
+  border:8px dashed black;
+  border-radius:50%;
+  background:yellow;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  animation: round3d 2s linear infinite;
+  transform-style:preserve-3d;
 }
-@keyframes round{
-    10%{
-        background-color: antiquewhite;
-    }
-    20%{
-        background-color:burlywood;
-    }
-    30%{
-        background-color: orchid;
-    }
-    40%{
-        background-color: green;
-    }
-    50%{
-        background-color: beige;
-    }
-    60%{
-        background-color: yellow;
-    }
-    70%{
-        background-color: red;
-    }
-    80%{
-        background-color: purple;
-    }
-    90%{
-        background-color: wheat;
-    }
-    100%{
-        transform: rotate(360deg);
-    }
+
+/* 3D Animations */
+@keyframes spin3d{
+  from{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  to{
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
 }
-.khan:hover{
-    background-color: cyan;
-    color: black;
-    font-size: 40px;
-    transition: 10s;
+
+@keyframes round3d{
+  from{
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to{
+    transform: rotateX(360deg) rotateY(360deg);
+  }
 }
-.khan:active{
-    background-color: aqua;
-    color: red;
-    font-size: 50px;
-    transition: 2s;
+
+.suhel:hover{
+  transform: rotateX(40deg) rotateY(40deg) scale(1.1);
+  transition:1s;
 }
-/* Main news bar */
+
+/* News bar */
 .news-bar{
+  width:100%;
   display:flex;
   align-items:center;
   background:black;
   color:white;
-  padding:0px;
-  overflow:hidden;
+  padding:5px;
 }
 
-/* Breaking news label */
 .label{
   background:red;
-  padding:5px 15px;
-  font-weight:bold;
-  margin-right:10px;
+  padding:5px 10px;
 }
 
-/* Ticker box */
-.ticker{
-  width:100%;
-  overflow:hidden;
-  position:relative;
-}
+.ticker{overflow:hidden; width:100%;}
 
-/* Moving text */
 .ticker-text{
-  white-space: nowrap;
-  display:inline-block;
-  animation: scrollText 100s linear infinite;
+  white-space:nowrap;
+  animation:scrollText 20s linear infinite;
 }
 
-/* Animation */
 @keyframes scrollText{
-  0%{
-    transform: translateX(20%);
-  }
-  100%{
-    transform: translateX(-100%);
-  }
+  from{transform:translateX(100%);}
+  to{transform:translateX(-100%);}
 }
 
-/* Pause on hover */
-.ticker-text:hover{
-  animation-play-state: paused;
+/* Cards */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+  padding:20px;
 }
 
+.card{
+  background:white;
+  padding:30px;
+  border-radius:10px;
+  text-align:center;
+  box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
 
+/* Footer */
+footer{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:10px;
+}
 
+/* Dark mode */
+.dark{
+  background:black;
+  color:white;
+}
 
+.dark .card{
+  background:#222;
+  color:white;
+}
+
+/* Fade animation */
+.fade{
+  animation:fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* Mobile responsive */
+@media(max-width:600px){
+  .suhel{
+    width:60vw;
+    height:60vw;
+  }
+
+  .khan{
+    width:30vw;
+    height:30vw;
+  }
+
+  .news-bar{
+    flex-direction:column;
+    text-align:center;
+  }
+}
