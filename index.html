@@ -1,64 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
+<title>Universe X</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Suhel Website</title>
 <link rel="stylesheet" href="practice.css">
+<link rel="manifest" href="manifest.json">
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar">
-  <div class="logo">Suhel</div>
-  <input type="checkbox" id="menu-toggle">
-  <label for="menu-toggle" class="menu-icon">☰</label>
-  <ul class="nav-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Projects</a></li>
-    <li><a href="#">Contact</a></li>
-    <li><button onclick="toggleDark()">🌙</button></li>
-  </ul>
+<div id="particles-js"></div>
+
+<header>
+<h2>UNIVERSE X</h2>
+<nav>
+<a href="index.html">Home</a>
+<a href="login.html">Login</a>
+<a href="contact.html">Contact</a>
+<button onclick="startVoice()">🎤 AI Voice</button>
 </nav>
+</header>
 
-<!-- Hero -->
-<section class="hero fade">
-  <h1>Welcome Suhel Ansari</h1>
-  <p>3D Animation + Responsive Website</p>
+<section class="hero">
+<h1 class="text3d">Welcome to Gonda Universe X</h1>
+<button onclick="payNow()">💳 Donate</button>
 </section>
 
-<!-- 3D Animation -->
-<div class="suhel">
-  <div class="khan">Suhel</div>
+<section class="animation-container">
+<div class="suhel"><div class="khan">3D</div></div>
+
+<div class="cube">
+<div class="face">1</div>
 </div>
 
-<!-- News bar -->
-<div class="news-bar">
-  <span class="label">BREAKING NEWS</span>
-  <div class="ticker">
-    <div class="ticker-text">
-      This is Suhel Ansari 3D animation responsive website running on GitHub Pages...
-    </div>
-  </div>
-</div>
-
-<!-- Cards -->
-<section class="cards">
-  <div class="card fade">Project 1</div>
-  <div class="card fade">Project 2</div>
-  <div class="card fade">Project 3</div>
+<div class="card3d">GONDA</div>
 </section>
 
-<!-- Footer -->
-<footer>
-  <p>© 2026 Suhel Ansari | All Rights Reserved</p>
-</footer>
+<a href="https://wa.me/917000000000" class="whatsapp">💬</a>
+<a href="tel:7000000000" class="call">📞</a>
 
-<script>
-function toggleDark(){
-  document.body.classList.toggle("dark");
-}
-</script>
+<footer>© 2026 Universe X</footer>
+
+<script src="script.js"></script>
+<script src="chatbot.js"></script>
+<script src="voice.js"></script>
+<script src="payment.js"></script>
 
 </body>
 </html>
