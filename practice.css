@@ -13,8 +13,6 @@ body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 @keyframes color{
-    100%{
-        transform: rotate(360deg);
     }
     10%{
         background-color: antiquewhite;
@@ -49,7 +47,6 @@ body{
 }
 body:hover{
     background-color: aqua;
-    background-position: left;
 }
 .suhel{
     width: 200px;
@@ -62,7 +59,7 @@ body:hover{
     background-color: pink;
     position: fixed;
     animation-name: spin;
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
     display: flex;
     justify-content: center;
@@ -228,3 +225,4 @@ body:hover{
 .ticker-text:hover{
   animation-play-state: paused;
 }
+
