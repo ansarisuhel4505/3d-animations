@@ -59,7 +59,7 @@ body:hover{
     background-color: pink;
     position: fixed;
     animation-name: spin;
-    animation-duration: 2s;
+    animation-duration: 4s;
     animation-iteration-count: infinite;
     display: flex;
     justify-content: center;
@@ -129,7 +129,7 @@ body:hover{
     background-color: pink;
     position: fixed;
     animation-name: round;
-    animation-duration: 1ms;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
     display: flex;
     justify-content: center;
@@ -225,4 +225,5 @@ body:hover{
 .ticker-text:hover{
   animation-play-state: paused;
 }
+
 
